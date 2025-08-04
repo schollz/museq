@@ -55,6 +55,7 @@ func (cli *CLI) load() error {
 	var pieces []string
 	var piece string
 	for _, line := range strings.Split(string(data), "\n") {
+		line = strings.TrimSpace(line)
 		if line == constants.SYMBOL_BREAK {
 			piece = strings.TrimSpace(piece)
 			if piece != "" {
